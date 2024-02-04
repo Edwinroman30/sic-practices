@@ -1,2 +1,1 @@
-# sic-practices
-Python practices SIC-2024
+# Samsung Innovation Campus 2024
