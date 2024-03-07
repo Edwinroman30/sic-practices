@@ -180,6 +180,48 @@ def binary_s(array, target):
 
 print("Found element:", binary_s(sorted([1,2,3,4,32,3,5,7,6]), 4))
 
+class Node:
+    def __init__(self, val : int):
+        self.val = val
+        self._next = None
+    
+    def set_next(self, node):
+        self._next = node
+    
+    def set_value(self, val : int):
+        self.val = val
+
+    def get_next(self):
+        return self._next
+    
+    def __repr__(self):
+        return str(self.val)
+
+def reversing_linkedlist(node : Node):
+    if node._next == None or node == None:
+        return node
+    
+    lastNode = reversing_linkedlist(node._next)
+    
+    node.get_next().set_next(node)
+    node.set_next(None)    
+    return lastNode
+
+def main_01_reversing_linkedlist():
+    n1 = Node(1)
+    n2 = Node(2)
+    n3 = Node(3)
+    n4 = Node(4)
+    n5 = Node(5)
+    
+    n1.set_next(n2)
+    n2.set_next(n3)
+    n3.set_next(n4)
+    n4.set_next(n5)
+        
+    lastnode = reversing_linkedlist(n1)    
+    print(lastnode)
+
 def atm_with_recursion():
     
     papeletas = [100,200,500,1000]
